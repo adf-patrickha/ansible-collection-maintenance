@@ -1,0 +1,7 @@
+This system is maintained with the Adfinis Ansible maintenance-collection: https://galaxy.ansible.com/adfinis/maintenance
+
+{% for item in motd_info %}
+{% for key, value in item.items() %}
+{{ key }}{{ value }}
+{% endfor %}
+{% endfor %}

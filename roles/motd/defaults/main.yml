@@ -1,0 +1,10 @@
+---
+# defaults file for motd
+#
+
+motd_modification: true
+motd_template: "motd.j2"
+motd_info:
+  - "FQDN:    ": "{{ ansible_fqdn }}"
+  - "Distro:  ": "{{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+  - "Last Ansible run: ": "{{ ansible_date_time.date }}, {{ ansible_date_time.time }}"

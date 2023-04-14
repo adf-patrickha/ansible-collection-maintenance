@@ -1,0 +1,16 @@
+---
+# tasks file for motd
+#
+
+- name: Distribute the /etc/motd file
+  ansible.builtin.template:
+    src: "{{ motd_template }}"
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+  tags:
+    - motd_config
+  when: motd_modification | default(false)
+  changed_when: false
